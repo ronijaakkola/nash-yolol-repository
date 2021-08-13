@@ -1,0 +1,23 @@
+define ore_string=" Ore"
+define crystal_string=" Crystal"
+define nl="\n"
+
+if :Scan==1 then
+    :S=1
+    :LastScan=""
+    :I=0
+    if :R==0 then 
+        :LastScan="Nothing detected"
+    else
+        :LastScan="Scanning"
+        while :I<=:R do
+            :LastScan+="."
+            :I++
+        end
+        :LastScan=""
+        :I=:R
+        :LastScan+=:M-ore_string-crystal_string+nl+:V+" kv"+nl+:V/1728+" stks"
+    end
+    :Scan=0
+    :Reset=1
+end
