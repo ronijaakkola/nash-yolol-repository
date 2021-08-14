@@ -6,18 +6,17 @@ if :Scan==1 then
     :S=1
     :LastScan=""
     :I=0
-    if :R==0 then 
-        :LastScan="Nothing detected"
-    else
+    while :R==0 do
+        :S=1
         :LastScan="Scanning"
-        while :I<=:R do
-            :LastScan+="."
-            :I++
-        end
-        :LastScan=""
-        :I=:R
-        :LastScan+=:M-ore_string-crystal_string+nl+:V+" kv"+nl+:V/1728+" stks"
     end
+    while :I<=:R do
+        :LastScan+="."
+        :I++
+    end
+    :LastScan=""
+    :I=:R
+    :LastScan+=:M-ore_string-crystal_string+nl+:V+" kv"+nl+:V/1728+" stks"
     :Scan=0
     :Reset=1
 end
