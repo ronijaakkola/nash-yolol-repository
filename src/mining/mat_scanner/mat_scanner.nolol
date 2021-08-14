@@ -3,13 +3,12 @@ define crystal_string=" Crystal"
 define nl="\n"
 
 if :Scan==1 then
-    :S=1
+    :Reset=1
     :LastScan=""
-    :I=0
     while :R==0 do
         :S=1
         :LastScan="Scanning"
-    end
+    end 
     while :I<=:R do
         :LastScan+="."
         :I++
@@ -18,5 +17,4 @@ if :Scan==1 then
     :I=:R
     :LastScan+=:M-ore_string-crystal_string+nl+:V+" kv"+nl+:V/1728+" stks"
     :Scan=0
-    :Reset=1
 end
