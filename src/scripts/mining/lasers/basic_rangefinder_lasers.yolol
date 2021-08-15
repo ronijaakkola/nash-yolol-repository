@@ -1,0 +1,13 @@
+// Points two mining laser turrets to a point where the rangefinder hits an element
+// Values xo and yo are lasers' offsets from the rangefinder. X towards
+// the sides of the ship and Y towards the roof of the ship. This script
+// assumes that the lasers and the rangefider are on the same Z axis plane.
+
+// This script uses an arctan approximation and it can be run on a basic
+// chip. The approximation is the following: π/2-OFFSET/RANGE. The end
+// result is in radians and it is converted to degrees.
+d=:RangeFinderDistance xo=2.47 yo=1.09
+angle1=((3.141/2)-(xo/d))*(180/3.141) 
+:L1Rot=-90+angle1 :L2Rot=90-angle1
+angle2=((3.141/2)-(yo/d))*(180/3.141)
+:L1Pit=-90+angle2 :L2Pit=-90+angle2

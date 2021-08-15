@@ -1,0 +1,7 @@
+// Points two mining laser turrets to a point where the rangefinder hits an element
+// Values xo and yo are lasers' offsets from the rangefinder. X towards
+// the sides of the ship and Y towards the roof of the ship. This script
+// assumes that the lasers and the rangefider are on the same Z axis plane.
+d=:RangeFinderDistance xo=2.47 yo=1.09
+angle1=atan(d/xo) :L1Rot=-90+angle1 :L2Rot=90-angle1
+angle2=atan(d/yo) :L1Pit=-90+angle2 :L2Pit=-90+angle2
